@@ -88,9 +88,9 @@ function rosbash_param
         if [[ "$?" == "0" ]]; then
             eval ${result_var}="'$value'"
             value_found=true
-            echo "found"
+            if ${verbose}; then echo "found"; fi
         else
-            echo "not found"
+            if ${verbose}; then echo "not found"; fi
         fi
     fi
 
