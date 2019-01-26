@@ -1,5 +1,7 @@
 # rosbash_params
 
+[![Build Status](http://build.ros.org/buildStatus/icon?job=Idoc__rosbash_params__ubuntu_trusty_amd64)](http://build.ros.org/job/Idoc__rosbash_params__ubuntu_trusty_amd64/)
+
 This Bash env-hook adds a "node-like" interface to your code written in Bash.
 The main thing it adds is ROS-like command-line parameter parsing (`_param:=value`), so that you can easily call the 
 Bash script from a launch file like 
