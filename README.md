@@ -50,7 +50,7 @@ Bash script from a launch file like
     
 ### Example call:
 
-    $ ./test_rosbash _param_name:=1 _unparsed_param:=2 positional1 positional2 _bool_param1:=False
+    $ ./test_rosbash _param_name:=1 _unparsed_param:=2 positional1 positional2 _bool_name1:=False
     mandatory_param = 1
     optional_param = default_value
     bool_param1 = False
@@ -65,7 +65,7 @@ Bash script from a launch file like
     
 ### Example call showing bool behavior
 
-    $ ./test_rosbash _mandatory_param:=test _bool_param1:=1 _bool_param2:=0 _bool_param3:=on
+    $ ./test_rosbash  _param_name:=test _bool_name1:=1 _bool_name2:=0 _bool_name3:=on
     mandatory_param = test
     optional_param = default_value
     bool_param1 = 1  # without default value, we cannot safely convert all `1`s to `True`
@@ -77,9 +77,9 @@ Bash script from a launch file like
 
     <launch>
         <node name="test" pkg="test_pkg" type="test_rosbash">
-            <param name="mandatory_param" value="test" />
-            <param name="optional_param" value="optional" />
-            <param name="bool_param1" value="off" />
+            <param name="param_name" value="test" />
+            <param name="param2_name" value="optional" />
+            <param name="bool_name1" value="off" />
         </node>
     </launch>
     
