@@ -46,7 +46,7 @@ Bash script from a launch file like
     echo "bool_param2 = ${bool_param2}"  # access the parsed parameter value
     echo "bool_param3 = ${bool_param3}"  # access the parsed parameter value
     
-    echo "rosbash_unused_argv = ${rosbash_unused_argv}"  # all CLI args not parsed as a parameter
+    echo "rosbash_unused_argv = ${rosbash_unused_argv[@]}"  # all CLI args not parsed as a parameter
     
 ### Example call:
 
@@ -97,7 +97,7 @@ node name specifies prefix of the parameters on the param server.
 
 * `rosbash_unused_params`: associative array of parsable params on CLI that were not used by any call to 
 `rosbash_param`. Keys are parameter names, values are their values.
-* `rosbash_unused_argv`: all arguments to this function from which no parameter was parsed.
+* `rosbash_unused_argv`: all arguments to this function from which no parameter was parsed (as Bash array; use `arg_string="${rosbash_unused_argv[@]}"` to convert to space-delimited string).
 * `_rosbash_params`: do not use, is private
 
 ### rosbash_param

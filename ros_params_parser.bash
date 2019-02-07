@@ -28,13 +28,13 @@ SCRIPT
     declare -gA _rosbash_params="( ${params_str} )"
     declare -gA rosbash_unused_params="( ${params_str} )"
 
-    declare -g rosbash_unused_argv=""
+    declare -ga rosbash_unused_argv=()
     for arg in "$@"; do
         # support assigning node name via __name:=name; load_command_line_node_params ignores params starting with __
         if [[ "${arg}" == __name:=* ]]; then
             rosbash_node_name="${arg#__name:=}"
         else
-            rosbash_unused_argv="${rosbash_unused_argv} ${arg}"
+            rosbash_unused_argv+=("${arg}")
         fi
     done
 }
@@ -140,6 +140,8 @@ function rosbash_param
     fi
 
     local unset_regex="_${param_escaped}:=[\"']\?${value_escaped}[\"']\? \?"
-    rosbash_unused_argv="$(LC_ALL=C sed "s/${unset_regex}//i" <<<"${rosbash_unused_argv}")"
+    for i in "${!rosbash_unused_argv[@]}"; do
+      $(echo "${rosbash_unused_argv[$i]}" | grep -q "${unset_regex}") && unset -v "rosbash_unused_argv[$i]"
+    done
 }
 export -f rosbash_param
