@@ -24,7 +24,7 @@ print(" ".join(str_params))
 SCRIPT
 )"
 
-    local params_str="$(python -c "${script}" $@)"
+    local params_str="$(python -c "${script}" "$@")"
     declare -gA _rosbash_params="( ${params_str} )"
     declare -gA rosbash_unused_params="( ${params_str} )"
 
