@@ -2,8 +2,8 @@
 Changelog for package rosbash_params
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.2 (2019-02-07)
+------------------
 * Fixed correct handling of whitespace in rosbash_unused_argv.
 * Fixed white space in arguments
 * Contributors: Martin Pecka
