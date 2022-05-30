@@ -2,8 +2,8 @@
 Changelog for package rosbash_params
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.0 (2022-05-30)
+------------------
 * making parser python3 compatible
 * Added website URL.
 * Contributors: Dylan White, Martin Pecka
