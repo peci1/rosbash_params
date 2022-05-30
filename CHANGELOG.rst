@@ -2,6 +2,12 @@
 Changelog for package rosbash_params
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* making parser python3 compatible
+* Added website URL.
+* Contributors: Dylan White, Martin Pecka
+
 1.0.2 (2019-02-07)
 ------------------
 * Fixed correct handling of whitespace in rosbash_unused_argv.
