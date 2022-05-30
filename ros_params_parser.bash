@@ -19,7 +19,7 @@ function rosbash_init_node
 import sys
 from rospy.client import load_command_line_node_params
 params=load_command_line_node_params(sys.argv)
-str_params=["[\"%s\"]=\"%s\"" % (k,v) for (k,v) in params.iteritems()]
+str_params=["[\"%s\"]=\"%s\"" % (k,v) for (k,v) in params.items()]
 print(" ".join(str_params))
 SCRIPT
 )"
